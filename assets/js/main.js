@@ -3,7 +3,12 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
-
+// Funciones
+	function confirmarCorreo(){
+		var correo = document.getElementById("email").value;
+		console.log(correo);
+	}
+// Fin Funciones
 (function($) {
 
 	var	$window = $(window),
