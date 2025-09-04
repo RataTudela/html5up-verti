@@ -4,10 +4,28 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 // Funciones
-	function confirmarCorreo(){
-		var correo = document.getElementById("email").value;
-		console.log(correo);
-	}
+	function correoYcontraseña() {
+          event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('contraseña').value;
+
+            if (!email || email.length > 100) {
+                document.getElementById('emailError').innerText = 'Correo No ingresado o demasiado largo.';
+                return;
+            }else{
+				document.getElementById('emailError').innerText = '';
+			}
+         
+            if (!password || password.length < 4 || password.length > 10) {
+                document.getElementById('contraseñaError').innerText = 'Contraseña No ingresada o inválida.';
+                return;
+            }else{
+				document.getElementById('contraseñaError').innerText= '';
+			}
+			
+            console.log('Correo:', email);
+            console.log('Contraseña:', password);
+        }
 // Fin Funciones
 (function($) {
 
