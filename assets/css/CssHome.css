@@ -1,0 +1,14 @@
+.img-fondo {
+            background-image: url('images/cyberpunk.jpg'); 
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+            min-height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+img{
+    width: 75px;
+}

@@ -96,13 +96,13 @@ input, select, textarea {
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-color: #ffffff;
+		background-color: #8bbdf8;
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
 		background-size: 100% 30em, auto;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 13pt;
-		color: #696969;
+		color: #000000;
 		font-weight: 300;
 		line-height: 2.25em;
 	}
@@ -1475,7 +1475,7 @@ input, select, textarea {
 	}
 
 	header {
-		margin: 0 0 2em 0;
+		margin: 0 0 4em 0;
 	}
 
 		header h2, header h3 {
@@ -1913,7 +1913,7 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		padding: 4.5em 0 3em 0;
+		padding: 3em 0 1em 0;
 	}
 
 	#features-wrapper {
@@ -1943,7 +1943,7 @@ input, select, textarea {
 	}
 
 		#logo h1 {
-			background: #1500ff;
+			background: #2b87ff;
 			color: #fff;
 			border-radius: 6px;
 			font-family: 'Oleo Script', serif;
@@ -1980,8 +1980,8 @@ input, select, textarea {
 
 			#nav ul li {
 				float: left;
-				line-height: 4.5em;
-				padding-left: 1.5em;
+				line-height: 7em;
+				padding-left: 4em;
 			}
 
 				#nav ul li a, #nav ul li span {
