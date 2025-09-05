@@ -11,7 +11,7 @@ function correoYcontraseña() {
     var password = document.getElementById('contraseña').value;
     
     var termina = ["@duocuc.cl","@profesor.duoc.cl","@gmail.com"];
-    var verificarCorreo = false;
+    var correoValido = false;
 
     for (var i = 0; i < termina.length; i++) {
         if (email.endsWith(termina[i])) {
@@ -149,6 +149,59 @@ function correoYcontraseñaRegistro() {
 	console.log('Region:', region);
 	console.log('Comuna:', comuna);
 }
+
+  const products = [
+    {
+      nombre: "Persona 3 Reload",
+      comentario: "Juego JRPG, Para PC, XBOX y PS4/PS5",
+      precio: 30,
+      imagen: "imagen/pic01.jpg"
+    },
+    {
+      nombre: "God of War Ragnarok",
+      comentario: "Vuelve el Dios de la guerra, a una nueva aventura",
+      precio: 40,
+      imagen: "img/pic02.jpg"
+    },
+    {
+      nombre: "SilkSong",
+      comentario: "Silksong es la épica secuela de Hollow Knight",
+      precio: 20,
+      imagen: "img/pic.03.jpg"
+    },
+    {
+      nombre: "Lego BatMan",
+      comentario: "Lego BatMan, sumergete como el famoso SuperHeroe pero en formato Lego",
+      precio: 30,
+      imagen: "img/pic04.jpg"
+    }
+  ];
+
+  function displayProducts() {
+    const container = document.getElementById('product-list');
+    container.innerHTML = ''; // limpiar
+
+    products.forEach((product, index) => {
+      const card = document.createElement('div');
+      card.className = "col-md-4 mb-4";
+
+      card.innerHTML = `
+        <div class="card">
+          <img src="${product.imagen}" class="card-img-top" alt="${product.nombre}">
+          <div class="card-body">
+            <h5 class="card-title">${product.nombre}</h5>
+            <p class="card-text">${product.comentario}</p>
+            <p class="card-text"><strong>Precio: $${product.precio}</strong></p>
+            <button class="btn btn-primary" onclick="addToCart(${index})">Agregar al carrito</button>
+          </div>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+
 // Fin Funciones
 (function($) {
 
