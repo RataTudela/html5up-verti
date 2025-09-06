@@ -67,6 +67,16 @@ function correoYcontraseñaRegistro() {
             break;
         }
     }
+    
+    if (!Nombre) {
+        document.getElementById('nombreError').innerText = 'Nombre no ingresado';
+        return;
+    } else if (Nombre.length > 50 || Nombre.length < 3) {
+        document.getElementById('nombreError').innerText = 'Nombre demasiado corto o largo';
+        return;
+    } else {
+        document.getElementById('nombreError').innerText = '';
+    }
 
     if (!email) {
         document.getElementById('emailError').innerText = 'Correo no ingresado';
@@ -89,16 +99,6 @@ function correoYcontraseñaRegistro() {
         return;
     } else {
         document.getElementById('contraseñaError').innerText = '';
-    }
-
-	if (!Nombre) {
-        document.getElementById('nombreError').innerText = 'Nombre no ingresado';
-        return;
-    } else if (Nombre.length > 50 || Nombre.length < 3) {
-        document.getElementById('nombreError').innerText = 'Nombre demasiado corto o largo';
-        return;
-    } else {
-        document.getElementById('nombreError').innerText = '';
     }
     
 	if (!validarContra){
@@ -141,6 +141,9 @@ function correoYcontraseñaRegistro() {
 		document.getElementById('comunaError').innerText = '';
 	}
 
+    var enviado = document.getElementById('registroExitoso');
+    enviado.innerText = 'Registro Exitoso';
+
     console.log('Correo:', email);
     console.log('Contraseña:', password);
 	console.log('Nombre:', Nombre);
@@ -149,6 +152,67 @@ function correoYcontraseñaRegistro() {
 	console.log('Region:', region);
 	console.log('Comuna:', comuna);
 }
+
+    function validarContacto() {
+    event.preventDefault();
+
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var texto = document.getElementById('texto').value;
+
+    
+    var termina = ["@duocuc.cl","@profesor.duoc.cl","@gmail.com"];
+    var correoValido = false;
+
+    for (var i = 0; i < termina.length; i++) {
+        if (email.endsWith(termina[i])) {
+            correoValido = true;
+            break;
+        }
+    }
+    
+
+    if (!nombre){
+        document.getElementById('nombreError').innerText = 'Nombre no ingresado';
+        return;
+    } else if (nombre.length > 50 || nombre.length < 3) {
+        document.getElementById('nombreError').innerText = 'Nombre demasiado corto o largo';
+        return;
+    } else {
+        document.getElementById('nombreError').innerText = '';
+    }
+
+    if (!email) {
+        document.getElementById('emailError').innerText = 'Correo no ingresado.';
+        return;
+    } else if (email.length > 100) {
+        document.getElementById('emailError').innerText = 'Correo demasiado largo.';
+        return;
+    } else if (!correoValido) {
+        document.getElementById('emailError').innerText = 'Correo no termina en "@duocuc.cl","@profesor.duoc.cl","@gmail.com';
+        return;
+    } else {
+        document.getElementById('emailError').innerText = '';
+    }
+
+    if(!texto){
+        document.getElementById('textoError').innerText = 'No ingreso comentario';
+        return;
+    } else if(texto.length > 500){ 
+        document.getElementById('textoError').innerText = 'Comentario demasiado largo';
+        return;
+    } else {
+        document.getElementById('textoError').innerText = '';
+    }
+    
+    var enviado = document.getElementById('Enviado');
+    enviado.innerText = 'Mensaje Enviado';
+
+    
+    console.log('Correo:', email);
+    console.log('Nombre:', nombre);
+    console.log('Comentario:', texto);
+    }
 
   const products = [
     {
