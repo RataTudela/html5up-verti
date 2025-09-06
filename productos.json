@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Persona 3: Reload",
+    "precio": 23000,
+    "descripcion": "Persona 3 Reload es un remake del RPG de 2006 Persona 3.",
+    "imagen": "images/pic01.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "God of War Ragnarök",
+    "precio": 35000,
+    "descripcion": "Secuela de God Of War, donde volvemos a ser Kratos.",
+    "imagen": "images/pic02.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Hollow Knight: SilkSong",
+    "precio": 10000,
+    "descripcion": "Secuela de Hollow Knight, Controlamos a Hornet.",
+    "imagen": "images/pic03.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Lego: Batman Legacy of the dark knight",
+    "precio": 40000,
+    "descripcion": "Vuelves Como el Caballero de la noche en forma de Lego.",
+    "imagen": "images/pic04.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Elden Ring",
+    "precio": 35000,
+    "descripcion": "Levántate y déjate guiar por la gracia para esgrimir el poder del Anillo de Elden.",
+    "imagen": "images/pic05.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Sekiro: Shadows Die Twice",
+    "precio": 30000,
+    "descripcion": "Forja tu propio camino en busca de venganza en la galardonada aventura de From Software.",
+    "imagen": "images/pic06.jpg"
+  }
+]
