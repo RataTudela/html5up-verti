@@ -216,38 +216,38 @@ function correoYcontraseñaRegistro() {
 
 const products = [
   { nombre: "Persona 3 Reload", 
-    comentario: "Juego JRPG, Para PC, XBOX y PS4/PS5",
+    comentario: "Juego JRPG, Para PC, XBOX y PS4/PS5, Famoso Remake de Shin Megami Tensei: Persona 3, lanzado en Japón simplemente como Persona 3, es un juego RPG de 2024, desarrollado y distribuido por Atlus.",
     precio: 18500, 
-    imagen: "images/pic01.jpg" },
+    imagen: "images/pic01.jpg"},
   { nombre: "God of War Ragnarok",
-    comentario: "Secuela de God Of War, donde volvemos a ser Kratos.",
+    comentario: "God of War Ragnarok es un videojuego de acción y aventura que continúa la historia de Kratos y Atreus tras los eventos de God of War (2018). El juego narra cómo, al llegar el Fimbulvetr, el invierno previo al Ragnarok.",
     precio: 25500, imagen: "images/pic02.jpg" },
   { nombre: "SilkSong", 
-    comentario: "Secuela de Hollow Knight, Controlamos a Hornet.", 
+    comentario: "En Hollow Knight: Silksong, la princesa Hornet es cautivada y llevada al desconocido reino de Pharloom, gobernado por la seda y el canto. Para escapar, debe emprender una peregrinación mortal para ascender a la cima.", 
     precio: 10500, 
     imagen: "images/pic03.jpg" },
   { nombre: "Lego BatMan", 
-    comentario: "Vuelves Como el Caballero de la noche en forma de Lego.", 
+    comentario: "El juego está protagonizado por Batman y su mano derecha, Robin, luchando contra el crimen y sus villanos en Gotham City. Los más temidos y peligrosos enemigos de Batman han logrado escapar del Asilo Arkham, Detenlos.", 
     precio: 5500, 
     imagen: "images/pic04.jpg" },
   { nombre: "Elden Ring", 
-    comentario: "Nuevo Entrega de FromSoftware, Juego Tipo DarkSouls.", 
+    comentario: "Elden Ring trata sobre un mundo llamado las Tierras Intermedias, donde el Círculo de Elden, la fuente de todo orden, ha sido destruido, fragmentándose su poder y llevando a los semidioses a una guerra.", 
     precio: 30000, 
     imagen: "images/pic05.jpg" },
   { nombre: "Sekiro", 
-    comentario: "Es un Japón ficticio de finales del siglo XVI Reinado por la violencia.", 
+    comentario: "Sekiro: Shadows Die Twice narra la historia de un shinobi desfigurado y dado por muerto, conocido como Lobo, que es encomendado a proteger a un joven señor de linaje misterioso, Embarcate en la aventura.", 
     precio: 22000, 
     imagen: "images/pic06.jpg" },
   { nombre: "Call Of Duty BO2", 
-    comentario: "Sumergete Como David Mason, en la busqueda de Menendez.", 
+    comentario: "Call of Duty: Black Ops 2 se desarrolla la epoca del 2025, unidos por el villano Raúl Menéndez, quien busca vengarse de Estados Unidos apoderándose de su tecnología militar para desatar un conflicto global.", 
     precio: 19990, 
     imagen: "images/blackOPs.jpg" },
   { nombre: "2K26", 
-    comentario: "2K26 se trata de una nueva edición del simulador de la NBA.", 
+    comentario: "NBA 2K26 se enfoca en un juego más realista y accesible, introduciendo la tecnología ProPLAY para mejorar la fluidez del movimiento de los jugadores, el modo MyTEAM ahora combina jugadores de la NBA y WNBA.", 
     precio: 40000, 
     imagen: "images/2K26.jpg" },
   { nombre: "No Man's Sky", 
-    comentario: "Videojuego de exploración y supervivencia en el universo.", 
+    comentario: "No Man's Sky es un videojuego de exploración y supervivencia en un universo generado proceduralmente de tamaño casi infinito, donde los jugadores pueden explorar planetas únicos, luchar contra criaturas y piratas.", 
     precio: 15000, 
     imagen: "images/nomansky.jpg" }
 ];
@@ -311,20 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
   generarCards();
 });
 
-function mostrarProductoPrincipal() {
-  const params = new URLSearchParams(window.location.search);
-  const index = params.get('index');
-
-  if (index !== null && products[index]) {
-    const product = products[index];
-    document.getElementById('imagen-principal').src = product.imagen;
-    document.getElementById('titulo-principal').textContent = product.nombre;
-    document.getElementById('comentario-principal').textContent = product.comentario;
-    document.getElementById('precio-principal').textContent = `$${product.precio.toLocaleString()}`;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', mostrarProductoPrincipal);
 // Fin Funciones
 (function($) {
 
