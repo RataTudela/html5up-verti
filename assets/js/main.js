@@ -311,6 +311,16 @@ document.addEventListener('DOMContentLoaded', () => {
   generarCards();
 });
 
+var carrito = [];
+var contador = 0;
+var span = document.getElementById("contador");
+
+function agregar(indice) {
+  var producto = products[indice];
+  carrito.push(producto);
+  contador = carrito.length;
+  span.innerText = contador;
+}
 // Fin Funciones
 (function($) {
 

@@ -21,3 +21,8 @@
     font-size: 34px; 
     margin-bottom: 30px; 
 }
+
+.carrito-container {
+      position: relative;
+      display: inline-block;
+    }
