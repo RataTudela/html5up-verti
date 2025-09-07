@@ -214,58 +214,117 @@ function correoYcontraseñaRegistro() {
     console.log('Comentario:', texto);
     }
 
-  const products = [
-    {
-      nombre: "Persona 3 Reload",
-      comentario: "Juego JRPG, Para PC, XBOX y PS4/PS5",
-      precio: 30,
-      imagen: "imagen/pic01.jpg"
-    },
-    {
-      nombre: "God of War Ragnarok",
-      comentario: "Vuelve el Dios de la guerra, a una nueva aventura",
-      precio: 40,
-      imagen: "img/pic02.jpg"
-    },
-    {
-      nombre: "SilkSong",
-      comentario: "Silksong es la épica secuela de Hollow Knight",
-      precio: 20,
-      imagen: "img/pic.03.jpg"
-    },
-    {
-      nombre: "Lego BatMan",
-      comentario: "Lego BatMan, sumergete como el famoso SuperHeroe pero en formato Lego",
-      precio: 30,
-      imagen: "img/pic04.jpg"
-    }
-  ];
+const products = [
+  { nombre: "Persona 3 Reload", 
+    comentario: "Juego JRPG, Para PC, XBOX y PS4/PS5",
+    precio: 18500, 
+    imagen: "images/pic01.jpg" },
+  { nombre: "God of War Ragnarok",
+    comentario: "Secuela de God Of War, donde volvemos a ser Kratos.",
+    precio: 25500, imagen: "images/pic02.jpg" },
+  { nombre: "SilkSong", 
+    comentario: "Secuela de Hollow Knight, Controlamos a Hornet.", 
+    precio: 10500, 
+    imagen: "images/pic03.jpg" },
+  { nombre: "Lego BatMan", 
+    comentario: "Vuelves Como el Caballero de la noche en forma de Lego.", 
+    precio: 5500, 
+    imagen: "images/pic04.jpg" },
+  { nombre: "Elden Ring", 
+    comentario: "Nuevo Entrega de FromSoftware, Juego Tipo DarkSouls.", 
+    precio: 30000, 
+    imagen: "images/pic05.jpg" },
+  { nombre: "Sekiro", 
+    comentario: "Es un Japón ficticio de finales del siglo XVI Reinado por la violencia.", 
+    precio: 22000, 
+    imagen: "images/pic06.jpg" },
+  { nombre: "Call Of Duty BO2", 
+    comentario: "Sumergete Como David Mason, en la busqueda de Menendez.", 
+    precio: 19990, 
+    imagen: "images/blackOPs.jpg" },
+  { nombre: "2K26", 
+    comentario: "2K26 se trata de una nueva edición del simulador de la NBA.", 
+    precio: 40000, 
+    imagen: "images/2K26.jpg" },
+  { nombre: "No Man's Sky", 
+    comentario: "Videojuego de exploración y supervivencia en el universo.", 
+    precio: 15000, 
+    imagen: "images/nomansky.jpg" }
+];
 
-  function displayProducts() {
-    const container = document.getElementById('product-list');
-    container.innerHTML = ''; // limpiar
+// Función para mostrar el producto principal
+function mostrarProductoPrincipal() {
+  const params = new URLSearchParams(window.location.search);
+  const index = params.get('index');
 
-    products.forEach((product, index) => {
-      const card = document.createElement('div');
-      card.className = "col-md-4 mb-4";
-
-      card.innerHTML = `
-        <div class="card">
-          <img src="${product.imagen}" class="card-img-top" alt="${product.nombre}">
-          <div class="card-body">
-            <h5 class="card-title">${product.nombre}</h5>
-            <p class="card-text">${product.comentario}</p>
-            <p class="card-text"><strong>Precio: $${product.precio}</strong></p>
-            <button class="btn btn-primary" onclick="addToCart(${index})">Agregar al carrito</button>
-          </div>
-        </div>
-      `;
-
-      container.appendChild(card);
-    });
+  if (index !== null && products[index]) {
+    const product = products[index];
+    document.getElementById('imagen-principal').src = product.imagen;
+    document.getElementById('titulo-principal').textContent = product.nombre;
+    document.getElementById('comentario-principal').textContent = product.comentario;
+    document.getElementById('precio-principal').textContent = `$${product.precio.toLocaleString()}`;
   }
+}
 
+// Función para generar todas las cards :v
+function generarCards() {
+  const container = document.getElementById('productos-container');
+  products.forEach((prod, i) => {
+    const col = document.createElement('div');
+    col.className = 'col-sm mb-3';
 
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.width = '18rem';
+
+    const img = document.createElement('img');
+    img.src = prod.imagen;
+    img.className = 'card-img-top';
+    img.alt = prod.nombre;
+
+    const body = document.createElement('div');
+    body.className = 'card-body';
+
+    const title = document.createElement('h5');
+    title.className = 'card-title';
+    title.textContent = prod.nombre;
+
+    const text = document.createElement('p');
+    text.className = 'card-text';
+    text.textContent = prod.comentario;
+
+    // Hacer clic en la card redirigiendo al producto principal
+    card.onclick = () => window.location.href = `?index=${i}`;
+
+    body.appendChild(title);
+    body.appendChild(text);
+    card.appendChild(img);
+    card.appendChild(body);
+    col.appendChild(card);
+    container.appendChild(col);
+  });
+}
+
+// Ejecutar funciones al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+  mostrarProductoPrincipal();
+  generarCards();
+});
+
+function mostrarProductoPrincipal() {
+  const params = new URLSearchParams(window.location.search);
+  const index = params.get('index');
+
+  if (index !== null && products[index]) {
+    const product = products[index];
+    document.getElementById('imagen-principal').src = product.imagen;
+    document.getElementById('titulo-principal').textContent = product.nombre;
+    document.getElementById('comentario-principal').textContent = product.comentario;
+    document.getElementById('precio-principal').textContent = `$${product.precio.toLocaleString()}`;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', mostrarProductoPrincipal);
 // Fin Funciones
 (function($) {
 

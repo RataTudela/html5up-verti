@@ -1,0 +1,23 @@
+.img-fondos {
+    background-image: url('images/samu4k.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: 100vh; 
+    padding: 20px; 
+}
+
+.titulo {
+    text-align: center; 
+    color: #a7a7a7; 
+    font-size: 60px; 
+    margin-bottom: 10px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.subtitulo {
+    text-align: center; 
+    color: #d6c9c9; 
+    font-size: 34px; 
+    margin-bottom: 30px; 
+}
